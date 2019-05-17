@@ -1,5 +1,3 @@
-
-
 const getDataPromise = (data) => new Promise( (resolve, reject) => {
     setTimeout( () => {
         typeof data === 'number' ? resolve(data * 2) : reject('Number must be provided')
@@ -7,12 +5,14 @@ const getDataPromise = (data) => new Promise( (resolve, reject) => {
     }, 2000)
 })
 
-getDataPromise(2).then( (data) => {
-    return getDataPromise(data)
-}).then( (data) => {
-    return getDataPromise(data)
-}).then( (data) => {
-    console.log(data)
+const processData = async () => {
+    let data = await getDataPromise(21)
+    data = await getDataPromise(data)
+    return data
+}
+
+processData().then( (data) => {
+    console.log(`Data: ${data}`)
 }).catch( (err) => {
-    console.log(err)
+    console.log(`Error: ${err}`)
 })
