@@ -40,21 +40,3 @@ window.addEventListener('storage', e => {
         renderNotes(notes, filters)
     }
 })
-
-
-
-
-
-
-// const now = moment()
-// now.add(2, 'year').subtract(20, 'year')
-// console.log(now.toString())
-// console.log(now.format("dddd, MMMM Do YYYY, h:mm:ss a"))
-// console.log(now.fromNow())
-// const nowTimestamp = now.valueOf()
-// console.log(nowTimestamp)
-// console.log(moment(nowTimestamp).toString())
-
-// const myBirthday = moment()
-// myBirthday.year(1997).month(7).date(21)
-// console.log(myBirthday.format("MMM D, YYYY"))
